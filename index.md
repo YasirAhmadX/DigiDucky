@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+# DigiDucky
 
-You can use the [editor on GitHub](https://github.com/YasirAhmadX/DigiDucky/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+**DigiDucky** is a DIY RubberDucky device, based on DigiSpark ATTINY85 based microcontroller board.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## DigiDuckyBLE
 
-### Markdown
+This is the program that has to be uploaded to the microcontroller. It uses SoftSerial to connect with Bluetooth and can receive inputs from a BT serial terminal.
+It can also receive multiline scripts from BT serial and execute on the host.  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Due to only 32kB of flash , 1kB of EEPROM... special key (KEY_ENTER,MOD_GUI_LEFT) need to be accessed using macros - ASCII character that are least used. This multiline scripts of DigiDucky are different to that of DuckyScript, So I call it QuackScript.
 
-```markdown
-Syntax highlighted code block
+### QuackScript
 
-# Header 1
-## Header 2
-### Header 3
+* `#` corespondes to windows key and calls `DigiKeyboard.sendKeyStroke(MOD_GUI_LEFT)`  
+* `~` coresponds to enter key and calls `DigiKeyboard.sendKeyStroke(KEY_ENTER)`  
+* `<` coresponds to backspace key and calls `DigiKeyboard.sendKeyStroke(KEY_BK_SPACE)` where `KEY_BK_SPACE` is a macro defined to be `42 ` 
+* `?` executes key combination to open *RUN* window    
+* `^` executes key combination to open *cmd* in *Administrator* Mode  
+  
+**Note:**  \` runs a preprogammed script hardcoded in the program itself, in DigiDuckyBLE it shuts down the host pc.
 
-- Bulleted
-- List
+### Resources
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/YasirAhmadX/DigiDucky/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* USB Rubber Ducky Documentation by hak5darren: https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript  
+* SoftSerial library modified by [J-Rios](https://github.com/J-Rios) to use INT0 instead PCINT0 interrupt: https://github.com/J-Rios/Digispark_SoftSerial-INT0
+* USB Documentation by [usb.org](https://usb.org/): https://usb.org/sites/default/files/hut1_22.pdf
+* [Digistump](https://github.com/digistump) drivers: https://github.com/digistump/DigistumpArduino/releases/tag/1.6.7  
+* Digistump DigiSpark Documentation: https://github.com/digistump/DigisparkArduinoIntegration/blob/master/libraries/DigisparkKeyboard/DigiKeyboard.h  
