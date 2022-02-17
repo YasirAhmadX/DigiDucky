@@ -21,8 +21,9 @@ Due to only 32kB of flash , 1kB of EEPROM... special key (KEY_ENTER,MOD_GUI_LEFT
 
 ### Resources
 
-* USB Rubber Ducky Documentation by hak5darren: https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript  
-* SoftSerial library modified by [J-Rios](https://github.com/J-Rios) to use INT0 instead PCINT0 interrupt: https://github.com/J-Rios/Digispark_SoftSerial-INT0
-* USB Documentation by [usb.org](https://usb.org/): https://usb.org/sites/default/files/hut1_22.pdf
-* [Digistump](https://github.com/digistump) drivers: https://github.com/digistump/DigistumpArduino/releases/tag/1.6.7  
-* Digistump DigiSpark Documentation: https://github.com/digistump/DigisparkArduinoIntegration/blob/master/libraries/DigisparkKeyboard/DigiKeyboard.h  
+* USB Rubber Ducky Documentation by hak5darren: [https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript](https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript)  
+* SoftSerial library modified by [J-Rios](https://github.com/J-Rios) to use INT0 instead PCINT0 interrupt: [https://github.com/J-Rios/Digispark_SoftSerial-INT0](https://github.com/J-Rios/Digispark_SoftSerial-INT0)
+* USB Documentation by [usb.org](https://usb.org/): [https://usb.org/sites/default/files/hut1_22.pdf](https://usb.org/sites/default/files/hut1_22.pdf)
+* [Digistump](https://github.com/digistump) drivers: [https://github.com/digistump/DigistumpArduino/releases/tag/1.6.7](https://github.com/digistump/DigistumpArduino/releases/tag/1.6.7)  
+* [Digistump](https://github.com/digistump) DigiSpark Documentation: [https://github.com/digistump/DigisparkArduinoIntegration/blob/master/libraries/DigisparkKeyboard/DigiKeyboard.h](https://github.com/digistump/DigisparkArduinoIntegration/blob/master/libraries/DigisparkKeyboard/DigiKeyboard.h)  
+* Digi-Spark scripts by [CedArctic](https://github.com/CedArctic): [https://github.com/CedArctic/DigiSpark-Scripts](https://github.com/CedArctic/DigiSpark-Scripts)
