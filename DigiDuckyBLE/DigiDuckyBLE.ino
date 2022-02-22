@@ -8,17 +8,17 @@
  ^ = cmd admin
  ` = script
  */
-#define KEY_BK_SPACE   42
+#define KEY_BK_SPACE   42  //BackSpace key as per documents at usb.org
 
-SoftSerial BT(2,1);
+SoftSerial BT(2,1);  //Bluetooth serial connection: RX = 2 , TX = 1
 
 void setup(){
   BT.begin(9600);
-  DigiKeyboard.delay(10000);
+  DigiKeyboard.delay(10000); //To allow for BT to connect
   
   BT.write("Intiate transmission...");
   while (true){
-    if(BT.available()){
+    if(BT.available()){ //inital messeage from connected device ensures read/write functionality through BT
       break;
     }
   }
@@ -28,20 +28,20 @@ void setup(){
 static char cmd;
 
 void loop(){
-  if(BT.available()){
-    cmd = BT.read();
+  if(BT.available()){ //If serial transmisson coming through BT
+    cmd = BT.read(); //Read character from BT serial channel
     
     switch (cmd){
       
-      case '#':
-        //BT.write("!!!Windows key pressed!!!\n"); //commented to enable multiline scripts from BTj
+      case '#': //emulates pressing windows key
+        //BT.write("!!!Windows key pressed!!!\n"); //commented to enable multiline scripts from BT
         DigiKeyboard.sendKeyStroke(0);
         DigiKeyboard.delay(100);
         DigiKeyboard.sendKeyStroke(0,MOD_GUI_LEFT);
         DigiKeyboard.delay(300);
         break;
         
-      case '~':
+      case '~': //emulates pressing of enter key
         //BT.write("!!!Enter key pressed!!!\n");
         DigiKeyboard.sendKeyStroke(0);
         DigiKeyboard.delay(500);
@@ -49,21 +49,21 @@ void loop(){
         DigiKeyboard.delay(500);
         break;
 
-      case '<':
+      case '<': //emulates pressing of backspace key
         DigiKeyboard.sendKeyStroke(0);
         DigiKeyboard.delay(100);
         DigiKeyboard.sendKeyStroke(KEY_BK_SPACE);
         DigiKeyboard.delay(100);
         break;
 
-      case '?':
+      case '?': //opens run dialogue box
         DigiKeyboard.sendKeyStroke(0);
         DigiKeyboard.delay(500);
         DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
         DigiKeyboard.delay(500);
         break;
 
-      case '^':
+      case '^': //opens cmd as administrator
         
         DigiKeyboard.sendKeyStroke(0);
         DigiKeyboard.sendKeyStroke(KEY_X, MOD_GUI_LEFT);
@@ -74,7 +74,7 @@ void loop(){
         DigiKeyboard.delay(500);
         break;
         
-      case '`':
+      case '`': //shuts down host
         BT.write("...Running Shutdown Script...\n");
         DigiKeyboard.sendKeyStroke(0);
 
@@ -95,5 +95,5 @@ void loop(){
         DigiKeyboard.print(cmd);
     }
   }
-  DigiKeyboard.update();
+  DigiKeyboard.update(); //updates keyboard to keep connection alive through usb
 }
