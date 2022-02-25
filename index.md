@@ -17,7 +17,9 @@ Due to only 32kB of flash , 1kB of EEPROM... special key (KEY_ENTER,MOD_GUI_LEFT
 * `?` executes key combination to open *RUN* window    
 * `^` executes key combination to open *cmd* in *Administrator* Mode  
   
-**Note:**  \` runs a preprogammed script hardcoded in the program itself, in DigiDuckyBLE it shuts down the host pc.
+**Note:**  
+* \` runs a preprogammed script hardcoded in the program itself, in DigiDuckyBLE it shuts down the host pc.
+* To know more go to [DigiDuckyBLE](/DigiDuckBLE.md)
 
 ### Resources
 
